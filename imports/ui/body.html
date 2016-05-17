@@ -1,0 +1,30 @@
+<body>
+    <div class="container">
+    <header>
+      <h1>Mi Tienda</h1>
+ 
+      <form id="form-producto" class="new-producto">
+        <h3>Ingresa los productos de tu tienda:</h3>
+        <input type="text" name="nombre" placeholder="Nombre" required/>
+        <input type="text" name="unidad" placeholder="Unidad" required/>
+        <input type="number" name="precio" placeholder="Precio Por UNIDAD" required/>
+        
+      </form>
+      <br>
+      <br>
+      <input form="form-producto" type="submit" value="Agregar">
+    </header>
+ 
+    <ul>
+      {{#each productos}}
+        {{> producto}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+ 
+<template name="producto">
+  <li > <h1>{{nombre}} </h1> <h3> $ {{precio}} cada {{unidad}} </h3></li>
+</template>
+
+<!-- Cantidad :   <input type="number" name="cantidad" placeholder="Cantidad" value="0">!-->
