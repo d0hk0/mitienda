@@ -1,7 +1,8 @@
 import { Template } from 'meteor/templating';
  
 import { Productos } from '../api/productos.js';
- 
+
++import './producto.js'; 
 import './body.html';
  
 Template.body.helpers({
