@@ -4,7 +4,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { Productos } from '../api/productos.js';
 
 import './producto.js'; 
-import './body.html';
+import './tendero.html';
  
 
 Template.body.onCreated(function bodyOnCreated() {
