@@ -10,6 +10,7 @@ import './tendero.html';
 
 Template.body.onCreated(function bodyOnCreated() {
   this.state = new ReactiveDict();
+  Meteor.subscribe('productos');
 });
  
 Template.body.helpers({
@@ -44,14 +45,7 @@ Template.body.events({
     const precio = target.precio.value;
  
     // Insert a producto into the collection
-    Productos.insert({
-      nombre,
-      unidad,
-      precio,
-      createdAt: new Date(), // current time
-      owner: Meteor.userId(),
-      username: Meteor.user().username,
-    });
+    Meteor.call('productos.insert', nombre, unidad, precio);
  
     // Clear form
     target.nombre.value = '';
