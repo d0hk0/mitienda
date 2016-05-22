@@ -1,0 +1,20 @@
+<template name='login'>
+
+    <div id="login-buttons">
+
+    {{#if currentUser}}
+
+      Hi, {{currentUser.profile.name}}
+      <button id='logout-button' class='small'>Sign Out</button>
+
+    {{else}}
+      <div class="service-login-buttons">
+          {{#each service}}
+            {{> _loginButtonsLoggedOutSingleLoginButton}}
+          {{/each}}
+      </div>
+    {{/if}}
+
+    </div>
+
+</template>

@@ -1,31 +1,40 @@
 <body>
     <div class="container">
     <header>
-      <h1>Mi Tienda : Productos Activos ({{incompleteCount}})</h1>
-
-      <label class="hide-disable">
-        <input type="checkbox" />
-        Ocultar productos desactivados
-      </label>
 
       {{> loginButtons}}
- 
-      <form id="form-producto" class="new-producto">
-        <h3>Ingresa los productos de tu tienda:</h3>
-        <input type="text" name="nombre" placeholder="Nombre" required/>
-        <input type="text" name="unidad" placeholder="Unidad" required/>
-        <input type="number" name="precio" placeholder="Precio Por UNIDAD" required/>
-        
-      </form>
-      <br>
-      <br>
-      <input form="form-producto" type="submit" value="Agregar">
+
+      {{#if currentUser}}
+
+        <br>
+
+        <h1>Mi Tienda : Productos Activos ({{incompleteCount}})</h1>
+
+        <label class="hide-disable">
+          <input type="checkbox" />
+          Ocultar productos desactivados
+        </label>
+      
+        <form id="form-producto" class="new-producto">
+          <h3>Ingresa los productos de tu tienda:</h3>
+          <input type="text" name="nombre" placeholder="Nombre" required/>
+          <input type="text" name="unidad" placeholder="Unidad" required/>
+          <input type="number" name="precio" placeholder="Precio Por UNIDAD" required/>
+          
+        </form>
+        <br>
+        <br>
+        <input form="form-producto" type="submit" value="Agregar">
+
+      {{/if}}
     </header>
  
-    <ul>
-      {{#each productos}}
-        {{> producto}}
-      {{/each}}
-    </ul>
+    {{#if currentUser}}
+      <ul>
+        {{#each productos}}
+          {{> producto}}
+        {{/each}}
+      </ul>
+    {{/if}}
   </div>
 </body>
