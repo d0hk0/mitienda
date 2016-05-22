@@ -82,7 +82,7 @@ ul {
   float: right;
   font-weight: bold;
   background: none;
-  font-size: 1em;
+  font-size: 2em;
   border: none;
   position: relative;
 }
@@ -90,7 +90,7 @@ ul {
 li {
   position: relative;
   list-style: none;
-  padding: 15px;
+  padding: 5px;
   border-bottom: #eee solid 1px;
 }
  
@@ -111,7 +111,7 @@ li.private {
   border-color: #ddd;
 }
  
-header .hide-completed {
+header .hide-disable {
   float: right;
 }
  
@@ -121,7 +121,7 @@ header .hide-completed {
  
 @media (max-width: 600px) {
   li {
-    padding: 12px 15px;
+    padding: 6px 7px;
   }
  
   .search {

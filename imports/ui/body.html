@@ -1,7 +1,14 @@
 <body>
     <div class="container">
     <header>
-      <h1>Mi Tienda</h1>
+      <h1>Mi Tienda : Productos Activos ({{incompleteCount}})</h1>
+
+      <label class="hide-disable">
+        <input type="checkbox" />
+        Ocultar productos desactivados
+      </label>
+
+      {{> loginButtons}}
  
       <form id="form-producto" class="new-producto">
         <h3>Ingresa los productos de tu tienda:</h3>
